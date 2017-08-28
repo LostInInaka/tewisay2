@@ -1,0 +1,34 @@
+tewisay(1)
+==========
+
+NAME
+----
+
+tewisay - cowsay clone with unicodes
+
+SYNOPSIS
+--------
+
+*tewisay* [*-T* 'tounge_string'] [*-e* 'eye_string']
+          [*-b* 'balloon'] [*-lb*] [*-f* 'cowfile'] [*-l*] 
+
+DESCRIPTION
+-----------
+*tewisay* is a partial cowsay clone. It supports most cowfiles, except ones
+that use perl more than usual. 
+
+OPTIONS
+-------
+*-T* 'tounge_string'::
+	Set the cowsay tongue string.
+*-e* 'eye_string'::
+	Set the cowsay eye string.
+*-b* 'balloon'::
+	Specify which balloon to use.
+*-lb*::
+	List availible balloons.
+*-f* 'cowfile'::
+	Specify what cowfile to use. 'cowfile' can be a path to a cowfile (if
+	it contains \'/') or a cowfile in *COWPATH*.
+*-l*::
+	List cowfiles in *COWPATH*.

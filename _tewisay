@@ -1,0 +1,21 @@
+#compdef tewisay tewithink
+
+local context state line
+typeset -A opt_args
+
+_arguments \
+	'(- : *)'{-h,--help}"[show help]" \
+	'(-f --file)'{-f,--file}'[Select cowfile]: :->cowfile' \
+	'(-b --border)'{-b,--border}'[Change border]: :->cowline' \
+	'(-l --list)'{-l,--list}'[List cowfiles]' \
+	'(-e --eyes)'{-e,--eyes}'[Select eyes]:eyes' \
+	'(-T --tongue)'{-T,--tounge}':[Select tongue]:tongue'
+
+case "$state" in
+	(cowfile)
+		compadd ${=${(f)"$($service -l 2>/dev/null)"}:#*\:} || _files
+		;;
+	(cowline)
+		compadd ${=${(f)"$($service -b list 2>/dev/null)"}:#*\:}
+		;;
+esac
